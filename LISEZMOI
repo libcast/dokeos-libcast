@@ -1,0 +1,33 @@
+# Installation
+
+Placez ce répertoire dans le répertoire `<RACINE DOKEOS>/main/libcast` de
+l'instance Dokeos.
+
+
+# Configuration
+
+Éditez le fichier `<RACINE DOKEOS>/mains/inc/global.inc.php` et ajoutez les lignes
+suivantes à la fin :
+
+    require_once api_get_path(SYS_CODE_PATH).'libcast/autoload.php';
+    $libcast = new Libcast('http://libcast.mon-domaine.tld/', 'identifiant', 'clé API', 'portail', 'profil_etudiant', 'profil_professeur');
+
+  * **http://libcast.mon-domaine.tld**: l'URL de base du serveur Libcast
+  * **identifiant**: l'identifiant de l'utilisateur API
+  * **clé API**: la clé API de l'utilisateur API (demandez à l'administrateur du
+    serveur Libcast au besoin)
+  * **portail**: le portail Libcast dans lequel les cours seront publiés (entrez
+    le "slug" ou bien l'URL API du portail)
+  * **profil_etudiant**: le profil qu'auront les étudiants créés sur le serveur
+    Libcast (entrez le "slug" ou bien l'URL API du profil)
+  * **profil_professeur**: le profil qu'auront les professeurs créés sur le serveur
+    Libcast (entrez le "slug" ou bien l'URL API du profil)
+
+
+# Client API Libcast
+
+Assurez vous que [Composer](http://getcomposer.org) est installé.
+
+Depuis le répertoire racine de Dokeos, installez le client Libcast :
+
+    php composer.phar require libcast/client ~2.1

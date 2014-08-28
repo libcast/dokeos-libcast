@@ -1,0 +1,30 @@
+# Installation
+
+Put this directory into the `<ROOT DIR>/main/libcast` directory of you Dokeos instance.
+
+
+# Configuration
+ 
+Edit the file `<ROOT DIR>/mains/inc/global.inc.php` and add the following code to the end:
+
+    require_once api_get_path(SYS_CODE_PATH).'libcast/autoload.php';
+    $libcast = new Libcast('http://libcast.mydomain.tld/', 'user', 'API key', 'media', 'studentProfile', 'professorProfile');
+
+  * **http://libcast.mydomain.tld**: the base URL of the Libcast instance
+  * **user**: the username of the API user
+  * **API key**: the API key of the API user (ask the Libcast platform administrator)
+  * **media**: the Libcast media in which you want to create the courses (either
+    a slug or an API URL)
+  * **studentProfile**: the profile to which the students will be associated in
+    the Libcast instance (either a slug or an API URL of a profile)
+  * **professorProfile**: the profile to which the professors will be associated
+    in the Libcast instance (either a slug or an API URL of a profile)
+
+
+# Libcast client
+
+Make sure [Composer](http://getcomposer.org) is installed.
+
+From the Dokeos root folder, install Libcast API client:
+
+    php composer.phar require libcast/client ~2.1
