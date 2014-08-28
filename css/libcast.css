@@ -1,0 +1,18 @@
+#dokeostabs li.tab_libcast{
+    background-image: url(../images/libcast_tab.gif);
+    background-repeat:no-repeat;
+    background-position: 10% 10px;
+}
+#dokeostabs li.tab_libcast_current{
+    color: #404142;
+    background-color: #efefef;
+    background-image: url(../images/libcast_tab.gif);
+    background-repeat:no-repeat;
+    background-position: 10% 10px;
+}
+.tool.videocast, .tool.libcast{
+	background-image: url(../images/tool.png);
+}
+.tool.videocast.invisible{
+	background-image: url(../images/tool_na.png);
+}
