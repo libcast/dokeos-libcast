@@ -300,11 +300,13 @@ class Libcast
         }
 
         // Retrieve an instance of the user
-        if (!$user = $this->getClient()->user($user['username'])) {
-            return $this->createUser($user);
+        try {
+            $client = $this->getClient()->user($user['username']);
+        } catch (Libcast\Client\Exception\NotFoundException $ex) {
+            $client = $this->createUser($user);
         }
 
-        return $user;
+        return $client;
     }
 
     /**
