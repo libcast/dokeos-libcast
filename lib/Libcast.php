@@ -300,13 +300,11 @@ class Libcast
         }
 
         // Retrieve an instance of the user
-        if (!count($users = $this->getClient()->users(null, array('email' => $user['email'])))) {
+        if (!$user = $this->getClient()->user($user['username'])) {
             return $this->createUser($user);
-        } else {
-            foreach ($users as $user) {
-                return $user;
-            }
         }
+
+        return $user;
     }
 
     /**
