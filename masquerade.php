@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Libcast Dokeos module.
  *
@@ -8,6 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+// This file is not for production, only for tests and developments,
+// thus, we stop here.
+die;
 
 require_once realpath(__DIR__.'/../inc/global.inc.php');
 require_once realpath(__DIR__.'/../inc/lib/course.lib.php');
