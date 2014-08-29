@@ -560,7 +560,7 @@ class Libcast
     public function getClient()
     {
         if (!$this->client) {
-            $this->client = new \Libcast\Client\LibcastClient($this->baseUrl.'services/dev.php/', $this->username, $this->apiKey);
+            $this->client = new \Libcast\Client\LibcastClient($this->baseUrl.'services/', $this->username, $this->apiKey);
         }
 
         return $this->client;
@@ -626,4 +626,3 @@ class Libcast
         }
     }
 }
-
