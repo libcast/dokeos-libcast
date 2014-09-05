@@ -24,10 +24,10 @@ $this_section = 'libcast';
 $actualHeaderState = isset($_SESSION['header_state']) ? $_SESSION['header_state'] : null;
 $_SESSION['header_state'] = 'expanded';
 Display::display_header();
-if (!is_null($acutualHeaderState)) $_SESSION['header_state'] = $actualHeaderState;
+if (!is_null($acutualHeaderState)) {
+  $_SESSION['header_state'] = $actualHeaderState;
+}
 
-// Create a session in the backend
-;
 ?>
 <style type="text/css">#main {width: 100%;}</style>
 <iframe id="briefcase" src="<?php echo $libcast->getAdminLink($_user) ?>" width="100%" marginheight="0" frameborder="0"></iframe>

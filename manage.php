@@ -21,13 +21,16 @@ unset($_course);
 api_block_anonymous_users();
 
 // Setting the section of this file (for the tabs)
-$this_section = 'libcast';
+$this_section = 'mycourses';
 
 // showing the header
 $actualHeaderState = isset($_SESSION['header_state']) ? $_SESSION['header_state'] : null;
 $_SESSION['header_state'] = 'expanded';
 Display::display_header();
-if (!is_null($acutualHeaderState)) $_SESSION['header_state'] = $actualHeaderState;
+if (!is_null($acutualHeaderState)) {
+  $_SESSION['header_state'] = $actualHeaderState;
+}
+
 ?>
 <style type="text/css">#main {width: 100%;}</style>
 <iframe id="libcast_stream" src="<?php echo $libcast->getStreamAdminLink($cidReq) ?>" width="100%" marginheight="0" frameborder="0"></iframe>
